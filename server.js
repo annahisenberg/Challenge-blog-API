@@ -1,17 +1,27 @@
-const express = require('express');
-const morgan = require('morgan');
+'use strict';
 
+const express = require('express');
+const mongoose = require('mongoose');
+const blogPostsRouter = require('./blogPostsRouter');
 const app = express();
 
-const blogPostsRouter = require('./blogPostsRouter');
+mongoose.Promise = global.Promise;
 
-app.use(morgan('common'));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + 'index.html');
 });
 
 app.use('/blog-posts', blogPostsRouter);
+app.use(express.json());
+
+//If client makes request to non-existent endpoint
+app.use('*', function (req, res) {
+    res.status(404).json({
+        message: 'Not Found'
+    });
+});
+
 
 let server;
 
