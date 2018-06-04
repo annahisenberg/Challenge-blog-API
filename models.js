@@ -11,15 +11,20 @@ const blogPostSchema = mongoose.Schema({
         required: true
     },
     author: {
-        type: String,
-        firstName: String,
-        lastName: String,
+        firstName: {
+            type: String,
+            required: true
+        },
+        lastName: {
+            type: String,
+            required: true
+        },
         required: true
     },
     publishDate: publishDate || Date.now()
 });
 
-blogPostSchema.virtual('authorString').get(function () {
+blogPostSchema.virtual('authorName').get(function () {
     return `${this.author.firstName} ${this.author.lastName}`
 });
 
