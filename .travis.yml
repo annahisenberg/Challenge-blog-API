@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: W0qUtsFUG+wsxyB7f7WY528qYUjMY1YJNjVS6hgJ+3X6NOTPSjUIP6B/dEREbTxFqNzwDMU9ZqF8HJeDTKI9S/iz//I9OXvKRY3U2jDC133kbba1D901wnimqeTDgbt9fvcQk85riKrwHq6JPnwjJcAKk9fXLyWHuXcyeoH8l0Pt4+Exby0ujfbPCUFSKWHDZewClO8dU/A+zCGR6lt0vbb7yBtajAmEZhfI4nprkoTvJEFn3v7hd9jkH5x5Xb+eJZLvrxh4hoA4DyzLef+Suh302BDa2X0MPqGpJ5RPTwz8uYuUUIU8bNx3wDNK394oWF1YX+EZ513d7uxhoT0fPrJyRJ2xB9PiuKKm5/g+seV6p3sFloDmt8Bb9I7GTNpxyTF/FyndxHoIxH62ZzHY6ctjc8GPdfp8B4e+0d7jjbiGeXvKwv1icM+szkg3n6Mch7b7OQyxDpeKmB0NPD3UHrCT5U2x7gfP5wyjwQ9qFTowahvzom3Pg2q0aSq0n5+P3fFR3KgkZ6/i32VHH7FvXPDfTaAMe9BrnSlSQ1V1QpWNp/8x7+W2lhLfwQig746L02BrK6fTSL2P3wicVr6emSeUsyDoncOo4IHEEoNuwMv0WgPFRHVaxpvHtygHK0tXb5Ny+klUbut5o2fRIF2eOZJgjDc0skdPEf3Nfq8IVIM=
+  app: dry-coast-97992
+  on:
+    repo: annahisenberg/Challenge-blog-API
