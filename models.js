@@ -28,7 +28,7 @@ blogPostSchema.virtual('authorName').get(function () {
     return `${this.author.firstName} ${this.author.lastName}`
 });
 
-
+//BlogPost represents collection of data in DB
 const BlogPost = mongoose.model('blog-post', blogPostSchema);
 
 module.exports = {
