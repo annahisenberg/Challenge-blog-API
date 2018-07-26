@@ -6,20 +6,19 @@ const blogPostsRouter = require('./blogPostsRouter');
 const app = express();
 
 mongoose.Promise = global.Promise;
+
 const {
     PORT,
     DATABASE_URL
 } = require('./config');
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'index.html');
-});
 
-app.use('/blog-posts', blogPostsRouter);
 app.use(express.json());
+app.use('/blog-posts', blogPostsRouter);
+
 
 //If client makes request to non-existent endpoint
-app.use('*', function (req, res) {
+app.use('*', function(req, res) {
     res.status(404).json({
         message: 'Not Found'
     });
